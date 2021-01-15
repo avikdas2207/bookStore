@@ -1,0 +1,96 @@
+.wholeContainer{
+.login-container{
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+    .gridBox{
+        width: 300px;
+        border: 1px solid #dadce0;
+        border-radius: 8px;
+        height: 400px;
+        justify-content: center;
+        padding: 30px;
+    }
+    #button{
+        background-color: #1a73e8;
+        color: whitesmoke;
+        text-transform: none;
+        font-family: "Google Sans",Roboto,Arial,sans-serif;
+    }
+    #create{
+        color: #1a73e8;
+        font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+    }
+    #signIn{
+        font-size: 24px;
+        text-transform: none;
+        text-align:center;
+        font-weight: 400;
+        margin: 10px;
+        font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    }
+    #continue{
+        font-size: 16px;
+        font-weight: 400;
+        font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+    }
+    .inputArea{
+        margin: 20px;
+    }
+    .logo{
+        display: flex;
+        justify-content: center;
+    }
+    form{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0px;
+    }
+    .inputValue , .passwd{
+        margin: 10px 0 10px 0;
+        width: 350px;
+    }
+    .last{
+        display: flex;
+        justify-content: flex-end;
+        width: 280px;
+    }
+    #cartIcon{
+        display: none;
+    }
+    #header{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+@media only screen and (max-width: 600px) {
+    .wholeContainer{
+        #appBar{
+            width: 380px;
+        }
+    .login-container{
+        display: flex;
+        height: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+    }
+        .gridBox{
+        box-shadow: none;
+        border: none;
+        }
+        .last{
+            justify-content: flex-end;
+            margin: 0;
+        }
+    }
+    
+}

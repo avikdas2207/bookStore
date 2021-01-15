@@ -1,0 +1,34 @@
+#appBar{
+    .MuiPaper-root{
+    background-color: #A03037;
+    }
+    #lableName{
+        margin: 0 40px 0 10px;
+    }
+    .makeStyles-search-4{
+        background: #FCFCFC 0% 0% no-repeat padding-box;
+    }
+    .makeStyles-searchIcon-5 , #searchBar{
+        color: #9d9d9d;
+    }
+    #searchBar{
+        width: 500px;
+    }
+    .MuiToolbar-root{
+        margin: 0 100px 0 100px;
+    }
+    .dropDown{
+        padding: 0 10px !important;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .MuiToolbar-root{
+        margin: 0 !important;
+    }
+    #searchBar{
+        width: 50% !important;
+    }
+    #wholeSearch{
+        margin: 0 50px 0 50px !important;
+    }
+}
