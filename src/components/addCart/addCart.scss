@@ -1,0 +1,255 @@
+.cartContainer{
+    display: flex;
+    justify-content: flex-start;
+    width: 71%;
+    margin: 50px auto;
+    .MuiPaper-root{
+    width: 70%;
+    box-shadow: none !important;
+    border: 1px solid #DCDCDC !important;
+    border-radius: 2px !important;
+    }
+    #headerCart{
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 3%;
+    }
+    #bookArea{
+        width: 400px;
+    }
+    #noImage{
+        height: 85px;
+        width: 65px;
+    }
+    #eachProduct{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #priceDetail{
+        
+    display: flex;
+    justify-content: flex-start;
+    }
+    #imageContain{
+        display: flex;
+        align-items: center;
+    }
+    #author{
+        margin: 0px;
+    font-size: 11px;
+    color: grey;
+    }
+    #bookName, #author {
+        text-align: start;
+    }
+    #disPrice{
+        margin: 16px 10px;
+    }
+    #price{
+        font-size: 13px;
+    font-weight: 700;
+    margin: 16px 10px 16px 0px;
+    }
+    #disPrice{
+        text-decoration: line-through;
+        letter-spacing: 0px;
+        color: #9D9D9D;
+        font-size: 10px;
+    }
+    #myCart{
+        font-weight: 500;
+    }
+    .MuiCardActions-root{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .MuiButtonBase-root{
+        border: 1px solid;
+        color: white;
+        background-color: #a03037;
+    }
+    .MuiButtonBase-root:hover {
+        border: 1px solid;
+        color: white;
+        background-color: #a03037;
+    }
+    #quantitySelect{
+        display: flex;
+    }
+    #displayValue{
+        width: 20%;
+        text-align: center;
+        margin: 0 5px;
+    }
+    #lastPart{
+        display: flex;
+        justify-content: space-evenly;
+        width: 55%;
+    }
+    #remove{
+        border: none;
+        color: black;
+        background-color: inherit;
+        font-size: x-small;
+    }
+}
+.secondBox {
+    width: 71%;
+    margin: auto;
+    display: flex;
+        justify-content: flex-start;
+    .MuiPaper-root{
+        width: 70%;
+        box-shadow: none !important;
+        border: 1px solid #DCDCDC !important;
+        border-radius: 2px !important;
+        justify-content: flex-start;
+        }
+        #secondAdd{
+            text-align: left;
+            margin-left: 5%;
+        }
+        #addressBtn{
+            background-color: #a03037;
+            color: white;
+        }
+        #addBtn{
+            display: flex;
+            justify-content: flex-end;
+        }
+        #userDetails{
+            width: 80% !important ;
+        }
+        #firstRow{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5% ;
+        }
+        #secondRow{
+            display: flex;
+            justify-content: space-between;
+            margin: 5% 0;
+        }
+        .MuiFormGroup-root{
+            display: flex;
+            flex-direction: row;
+        }.MuiFormLabel-root{
+            text-align: left;
+        }
+        #lastRow{
+            display: flex;
+            justify-content: flex-start;
+        }
+        .MuiAccordionDetails-root{
+            display: flex;
+            flex-direction: column;
+        }
+        #addPara{
+            font-weight: 500;
+            margin-left: 3%;
+        }
+}
+.thirdBox{
+    width: 71%;
+    margin: 20px auto;
+    display: flex;
+        justify-content: flex-start;
+    .MuiPaper-root{
+        width: 70%;
+        box-shadow: none !important;
+        border: 1px solid #DCDCDC !important;
+        border-radius: 2px !important;
+        }
+    #orderSum{
+        text-align: left;
+        margin-left: 2%;
+        font-weight: 500;
+    }
+    #orderCart{
+        text-align: start;
+        font-weight: 500;
+        margin-left: 3%;
+    }
+    .MuiPaper-root{
+        width: 70%;
+        box-shadow: none !important;
+        border: 1px solid #DCDCDC !important;
+        border-radius: 2px !important;
+        }
+        #orderCart{
+            display: flex;
+            justify-content: flex-start;
+        }
+        #orderArea{
+            width: 400px;
+        }
+        #noImage{
+            height: 85px;
+            width: 65px;
+        }
+        #eachProduct{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #priceDetail{
+            
+        display: flex;
+        justify-content: flex-start;
+        }
+        #imageContain{
+            display: flex;
+            align-items: center;
+        }
+        #author{
+            margin: 0px;
+        font-size: 11px;
+        color: grey;
+        }
+        #bookName, #author {
+            text-align: start;
+        }
+        #disPrice{
+            margin: 16px 10px;
+        }
+        #price{
+            font-size: 13px;
+        font-weight: 700;
+        margin: 16px 10px 16px 0px;
+        }
+        #disPrice{
+            text-decoration: line-through;
+            letter-spacing: 0px;
+            color: #9D9D9D;
+            font-size: 10px;
+        }
+        #myCart{
+            font-weight: 500;
+        }
+        .MuiCardActions-root{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .MuiButtonBase-root{
+            border: 1px solid;
+            color: white;
+            background-color: #a03037;
+        }
+        .MuiButtonBase-root:hover {
+            border: 1px solid;
+            color: white;
+            background-color: #a03037;
+        }
+        #quantitySelect{
+            display: flex;
+        }
+        #displayValue{
+            width: 20%;
+            text-align: center;
+            margin: 0 5px;
+        }
+}
+@media only screen and (max-width: 600px) {
+    #lastPart{
+        width: 50% !important;
+    }
+}

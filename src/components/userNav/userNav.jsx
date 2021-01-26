@@ -1,25 +1,31 @@
-import React from 'react';
+import React , { useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import education from '../../assets/education.svg';
-import './navBar.scss';
+import './userNav.scss';
+import Snackbar from '@material-ui/core/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
 import AppBar from '@material-ui/core/AppBar';
+import Popover from '@material-ui/core/Popover';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
+import Badge from '@material-ui/core/Badge';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
-import MenuIcon from '@material-ui/icons/Menu';
+import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import CardTravelOutlinedIcon from '@material-ui/icons/CardTravelOutlined';
+import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';
 import Divider from '@material-ui/core/Divider';
 import UserLogin from '../userLogin/userLogin';
+import AddCart from '../addCart/addCart';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -85,18 +91,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const NavBar = (props) => {
+const UserNavBar = (props) => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
+  const [openSnack, setOpenSnack] = React.useState(false);
+  const [msgSnack, setMsgSnack] = React.useState("");
+
+  useEffect(() => {
+    props.getCart();
+  }, [])
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
-    console.log("calling");
   };
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
@@ -114,11 +125,35 @@ const NavBar = (props) => {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const handleCloseSnack = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpenSnack(false);
+  };
+
+  const openCart = () => {
+    (localStorage.getItem("token")) ? props.history.push('/dashboard/mycart') : loginAlert();
+  }
+
+  const loginAlert = () => {
+    setMsgSnack("Login First");
+    setOpenSnack(true);
+  }
+
+  const openDash = () => {
+    props.history.push('/dashboard/displaybooks');
+  }
+  const goWishlist = () => {
+    props.history.push('/dashboard/mywishlist');
+  }
+
   const logOut = () => {
     const token = localStorage.getItem("token");
     localStorage.clear();
     console.log(token);
-    props.history.push('/adminlogin');
+    props.history.push('/dashboard/displaybooks');
   }
 
   const onCLickLogout = () => {
@@ -130,41 +165,43 @@ const NavBar = (props) => {
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       id={menuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: 'bottom', horizontal: 'right' }}
       open={isMenuOpen}
       onClose={handleMenuClose}
       id="drop"
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={onCLickLogout}>Logout</MenuItem>
-    </Menu>
-  );
-  const renderDash = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-      id="drop"
-    >
-      <MenuItem onClick={handleMenuClose}>Login</MenuItem>
-      <MenuItem onClick={onCLickLogout}>Logout</MenuItem>
+      { (localStorage.getItem("token") == null) ? <div id="beforeLogin">
+        <p id="first" className="firstPara" >Welcome</p>
+        <p id="second" >To access account and manage orders</p>
+        <Button onClick={handleClickOpen} > Login/SignUp </Button>
+        <div id="getProducts" >
+          <div id="myOrders" >
+            <CardTravelOutlinedIcon id="travel" />
+            <p id="orderText" >My Orders</p>
+          </div>
+          <div id="myWishlist" onClick={goWishlist} >
+            <FavoriteBorderOutlinedIcon id="wish" />
+            <p id="wishText" >WishList</p>
+          </div>
+        </div>
+      </div> : <div id="afterLogin" > <p id="first" className="firstPara" >Welcome</p>
+        <p id="second" >To access account and manage orders</p> < Button onClick={logOut} id="logoutBtn" > Logout </ Button> <div id="getProducts" >
+        <div id="myOrders" >
+          <CardTravelOutlinedIcon id="travel" />
+          <p id="orderText" >My Orders</p>
+        </div>
+        <div id="myWishlist" onClick={goWishlist} >
+          <FavoriteBorderOutlinedIcon id="wish" />
+          <p id="wishText" >WishList</p>
+        </div>
+      </div> </div>}
+
     </Menu>
   );
 
-  const checkToken = () => {
-    if (localStorage.getItem("token") === null) {
-      renderDash();
-  }else{
-    renderMenu();
-  }
-  }
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
     <Menu
@@ -176,32 +213,19 @@ const NavBar = (props) => {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
-          </Badge>
+      <MenuItem onClick={handleProfileMenuOpen} >
+        <IconButton aria-label="show 4 new mails" color="inherit" id="accountRes">
+        <AccountCircle />
         </IconButton>
-        <p>Messages</p>
+        <p id="accountPara">Account</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
+      <MenuItem onClick={openCart}>
+        <IconButton aria-label="show 11 new notifications" color="inherit" id="cartRes" >
+        <Badge badgeContent={props.length} color="secondary">
+                <ShoppingCartOutlinedIcon />
+                </Badge>
         </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Hello</p>
+        <p id="cartPara" > Cart</p>
       </MenuItem>
     </Menu>
   );
@@ -211,16 +235,16 @@ const NavBar = (props) => {
       <div className={classes.grow} id="appBar" >
         <AppBar position="static">
           <Toolbar>
-            <img src={education} alt="bookstore" />
+            <img src={education} alt="bookstore" onClick={openDash} />
             <Typography className={classes.title} id="lableName" variant="h6" noWrap>
               Bookstore
           </Typography>
             <div className={classes.search} id="wholeSearch" >
               <div className={classes.searchIcon}>
-                <SearchIcon />
+                <SearchIcon id="searchIcon" />
               </div>
               <InputBase id="searchBar"
-                placeholder="Search…"
+                placeholder="Search…" onChange={event => {props.setSearchTerm(event.target.value)}}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,
@@ -240,7 +264,11 @@ const NavBar = (props) => {
               >
                 <AccountCircle />
               </IconButton>
-
+              <IconButton onClick={openCart} >
+                <Badge badgeContent={props.length} color="secondary">
+                <ShoppingCartOutlinedIcon />
+                </Badge>
+              </IconButton>
             </div>
             <div className={classes.sectionMobile}>
               <IconButton
@@ -255,10 +283,32 @@ const NavBar = (props) => {
           </Toolbar>
         </AppBar>
         {renderMobileMenu}
-        {checkToken}
+        {renderMenu}
       </div>
-      <UserLogin open={open} close={handleClose} />
+      <UserLogin open={open} close={handleClose} openLogin={handleClickOpen} />
+      <div>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+          open={openSnack}
+          autoHideDuration={3000}
+          onClose={handleCloseSnack}
+          message={msgSnack}
+          action={
+            <React.Fragment>
+              <Button color="secondary" size="small" onClick={handleCloseSnack}>
+                UNDO
+            </Button>
+              <IconButton size="small" aria-label="close" color="inherit" onClick={handleCloseSnack}>
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </React.Fragment>
+          }
+        />
+      </div>
     </>
   );
 }
-export default withRouter(NavBar);
+export default withRouter(UserNavBar);

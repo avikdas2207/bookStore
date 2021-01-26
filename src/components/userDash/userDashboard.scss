@@ -1,0 +1,51 @@
+.MuiList-root{
+    padding: 10px !important;
+    #first{
+    font-size: 10px;
+    margin: 0px;
+    font-weight: bolder;
+    }
+    #second{
+        font-size: 10px;
+        margin: 0px;
+    }
+    #myOrders{
+        display: flex;
+        justify-content: flex-start;
+        margin: 10px 0px;
+        color: grey;
+    }
+    #myWishlist{
+        display: flex;
+        justify-content: flex-start;
+        color: grey;
+    }
+    #wishText{
+        margin: 0px;
+        font-size: 10px;
+    }
+    #orderText{
+        margin: 0px;
+        font-size: 10px;
+    }
+    #travel , #wish {
+        height: 15px;
+    }
+    .MuiButtonBase-root{
+        margin-top: 10px;
+        border: 1px solid #a03037;
+        color: #a03037;
+        height: 25px;
+        border-radius: 2px;
+        font-size: 10px;
+    }
+}
+#update , #delete {
+    margin: 20px 0px;
+}
+#loginDialog{
+    .MuiDialog-paper{
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+}

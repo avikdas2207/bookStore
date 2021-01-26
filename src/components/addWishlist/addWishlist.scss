@@ -1,0 +1,100 @@
+.wishContainer{
+    display: flex;
+    justify-content: flex-start;
+    width: 71%;
+    margin: 50px auto;
+    .MuiPaper-root{
+    width: 70%;
+    box-shadow: none !important;
+    border: 1px solid #DCDCDC !important;
+    border-radius: 2px !important;
+    }
+    #headerCart{
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 3%;
+    }
+    #moveToCart{
+        border: none;
+        color: black;
+        background-color: inherit;
+        font-size: 10px;
+    }
+    #bookArea{
+        width: 400px;
+    }
+    #noImage{
+        height: 85px;
+        width: 65px;
+    }
+    #eachProduct{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #priceDetail{
+        
+    display: flex;
+    justify-content: flex-start;
+    }
+    #imageContain{
+        display: flex;
+        align-items: center;
+    }
+    #author{
+        margin: 0px;
+    font-size: 11px;
+    color: grey;
+    }
+    #bookName, #author {
+        text-align: start;
+    }
+    #disPrice{
+        margin: 16px 10px;
+    }
+    #price{
+        font-size: 13px;
+    font-weight: 700;
+    margin: 16px 10px 16px 0px;
+    }
+    #disPrice{
+        text-decoration: line-through;
+        letter-spacing: 0px;
+        color: #9D9D9D;
+        font-size: 10px;
+    }
+    #myCart{
+        font-weight: 500;
+    }
+    .MuiCardActions-root{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .MuiButtonBase-root{
+        border: 1px solid;
+        color: white;
+        background-color: #a03037;
+    }
+    .MuiButtonBase-root:hover {
+        border: 1px solid;
+        color: white;
+        background-color: #a03037;
+    }
+    #quantitySelect{
+        display: flex;
+    }
+    #displayValue{
+        width: 20%;
+        text-align: center;
+        margin: 0 5px;
+    }
+    #lastPart{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #remove{
+        border: none;
+        color: black;
+        background-color: inherit;
+        font-size: x-small;
+    }
+}

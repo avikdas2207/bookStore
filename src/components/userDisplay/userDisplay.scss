@@ -2,16 +2,18 @@
     .addBookBtn{
         display: flex;
         justify-content: space-between;
-        margin: 30px 165px;
+        margin: 0 auto;
+        width: 71%;
     }
 .displayCard{
-    margin: 40px;
+    width: 75%;
+    margin: 0 auto !important;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
     .MuiCard-root{
-        width: 200px;
+        width: 220px;
         margin: 20px;
     }
     h4{
@@ -69,12 +71,34 @@
     }
     .btnContainer{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
+    }
+    #myOrders{
+        display: flex;
+        justify-content: flex-start;
     }
     #update , #delete {
         height: 25px;
         border-radius: 1px;
         box-shadow: none;
+    }
+    #updateDone{
+        width: 50%;
+        background-color: cornflowerblue;
+        height: 25px;
+        border-radius: 1px;
+        box-shadow: none;
+        color: white !important;
+        margin: 20px 0 !important;
+    }
+    #deleteDone{
+        width: 42%;
+        background-color: white;
+        height: 25px;
+        border-radius: 1px;
+        box-shadow: none;
+        color: black !important;
+        margin: 20px 0 !important;
     }
     #update{
         color: white !important;
@@ -84,16 +108,57 @@
     }
     #delete{
         background-color: white !important;
-    } 
+    }
+    .MuiInputBase-root{
+        margin: 20px 0px !important;
+    }
+    #books{
+        margin: 15px 0px !important;
+    }
+}
+.pagination{
+    display: flex;
+    justify-content: flex-start;
+    padding: 0px;
+    margin: auto;
+    width: 73%;
+}
+.page-item{
+    margin: 5px;
+    font-size: 20px;
+    border: 1px solid blue;
+    padding: 10px;
+}
+.MuiNativeSelect-root {
+    outline: 1px solid;
+    width: 100px !important ;
+    font-size: 10px !important;
+    font: none !important ;
 }
 @media only screen and (max-width: 600px){
     .addBookBtn{
-        margin: 20px !important;
+        margin: 0 auto !important;
+        #books{
+            font-size: 15px;
+        }
+        .MuiSelect-root{
+            font-size: 15px;
+        }
+        .MuiInputBase-root{
+            margin: 10px 0px !important;
+        }
+        .MuiFormControl-root{
+            width: 40% !important;
+        }
     }
     #addBook{
         margin: 20px 0 !important;
     }
     .MuiPaper-root, .MuiCard-root{
         width: 100% !important;
+    }
+    .MuiNativeSelect-root{
+        padding: 0px !important;
+        height: 25px !important;
     }
 }

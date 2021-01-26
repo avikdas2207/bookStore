@@ -1,0 +1,33 @@
+#orderContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    #orderImage{
+        margin-top: 5%;
+    }
+    #addTable{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    border: 1px solid #dcdcdc;
+    }
+    #orderPara{
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    #orderText{
+        width: 50%;
+    }
+    #tableHead{
+        height: 30px;
+    background-color: #dcdcdc;
+    }
+    td{
+        font-size: 16px;
+    border: 1px solid #dcdcdc;
+    }
+    #tableData{
+        height: 100px;
+    }
+}

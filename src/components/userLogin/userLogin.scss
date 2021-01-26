@@ -1,0 +1,79 @@
+.dialogContainer{
+    display: flex;
+    justify-content: center;
+    .imageArea{
+        background-color: grey;
+        width: 300px;
+        background: #F5F5F5 0% 0% no-repeat padding-box;
+        border-radius: 21px 0px 0px 21px;
+        opacity: 1;
+        margin: 30px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    #online{
+        font-weight: 700;
+    }
+    .loginArea{
+        background-color:white;
+        height: 420px;
+        width: 290px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 5px 15px #00000029;
+        border: 1px solid #E4E4E4;
+        border-radius: 6px;
+        opacity: 1;
+    }
+    .selectAction{
+        DISPLAY: flex;
+    justify-content: space-evenly;
+    margin: 10px 30px;
+    }
+    .MuiButton-label{
+        font-size: 23px;
+    }
+    #loginImage{
+        height: 240px;
+        width: 240px;
+        border-radius: 100%;
+    }
+    #frgtPswd{
+        font-size: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 27px 7px;
+    }
+    #loginButton{
+        background-color: #a03037;
+        width: 228px;
+        margin: 10px;
+        color: white;
+        .MuiButton-label{
+            font-size: 10px;
+        }
+    }
+    .MuiInputBase-root{
+        border-radius: 2px !important;
+    }
+    #email , #pswd , #name , #phone {
+        border: 1px solid #E2E2E2;
+        height: 30px;
+        width: 224px;
+        margin: 10px;
+        outline: none;
+    }
+    #emailLable , #pswdLable , #nameLable , #phoneLable {
+        font-size: 10px;
+    margin: 0px !important;
+    padding: 0px 10px;
+    }
+    .register , .inputArea {
+        margin: 20px;
+    }
+    .MuiPaper-root{
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+}

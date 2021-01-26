@@ -5,7 +5,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: whitesmoke;
 }
     .gridBox{
         width: 300px;
@@ -16,10 +15,14 @@
         padding: 30px;
     }
     #button{
-        background-color: #1a73e8;
+        background-color: #a03037;
         color: whitesmoke;
         text-transform: none;
         font-family: "Google Sans",Roboto,Arial,sans-serif;
+    }
+    .MuiButton-label{
+        font-size: 15px !important;
+
     }
     #create{
         color: #1a73e8;

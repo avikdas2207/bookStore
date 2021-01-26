@@ -1,0 +1,64 @@
+#appBar{
+    .MuiPaper-root{
+    background-color: #A03037;
+    align-items: center;
+    }
+    #lableName{
+        margin: 0 40px 0 10px;
+    }
+    .makeStyles-search-4{
+        background: #FCFCFC 0% 0% no-repeat padding-box;
+    }
+    .makeStyles-searchIcon-5 , #searchBar{
+        color: #9d9d9d;
+    }
+    #searchBar{
+        width: 500px;
+    }
+    .MuiToolbar-root{
+        width: 71% !important;
+    }
+    .dropDown{
+        padding: 0 10px !important;
+    }
+    .MuiList-root{
+        margin: 10px !important;
+    }
+    
+    #first{
+        font-size: 10px !important; 
+        margin: 10px;
+        font-weight: bold;
+    }
+    #second{
+        font-size: 10px;
+        margin: 10px;
+    }
+    #myOrders{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .MuiSvgIcon-root{
+        color: white;
+    }
+    #searchIcon{
+        color: grey !important;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .MuiToolbar-root{
+        margin: 0 !important;
+    }
+    .MuiIconButton-root{
+        padding: 0 !important;
+    }
+    #wholeSearch{
+        display: none;
+    }
+    #accountRes , #cartRes{
+        margin: 0px 10px !important;
+    }
+    #accountPara , #cartPara {
+        font-size: 18px;
+    }
+}

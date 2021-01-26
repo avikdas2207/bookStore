@@ -6,4 +6,10 @@ const post = (url, data, isHeaderReq=false, header=null ) =>{
 const get = (url, isHeaderReq=false, header=null ) =>{
     return axios.get(url,isHeaderReq && header);
 }
-module.exports = {post, get};
+const put = (url, data , isHeaderReq=false, header=null ) =>{
+    return axios.put(url,data ,isHeaderReq && header);
+}
+const Delete = (url, isHeaderReq=false, header=null ) =>{
+    return axios.delete(url,isHeaderReq && header);
+}
+module.exports = {post, get , put , Delete };
